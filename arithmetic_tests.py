@@ -23,3 +23,4 @@ dodecimal = ['0',
 twelves = Arithmetic(dodecimal)
 print(twelves.to_radix(24))
 print(twelves.add('1', '9'))
+print(twelves.to_base10('11'))

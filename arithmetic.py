@@ -40,12 +40,16 @@ class Arithmetic():
             remainder = number % self.radix
             quotient = number // self.radix
             return self.to_radix(quotient) + self.to_digit[remainder]
-    # TODO:
+
     def to_base10(self, number_str):
         """Convert a string representing a radix number to a base 10 
         integer.
         """
-        raise Exception("This method is not implemented")
+        if not number_str:
+            return 0
+        else:
+            char = number_str[0]
+            rest = number_str[1:]
+            place = pow(self.radix, len(number_str) - 1)
+            return (place * self.to_value[char]) + self.to_base10(rest)
         
-
-
